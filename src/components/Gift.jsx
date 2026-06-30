@@ -24,10 +24,10 @@ export default function Gift({ settings }) {
           Your presence is the greatest gift. Should you wish to bless us further:
         </p>
         <div className={styles.details}>
-          <p><span>Account:</span> {settings?.bankAccount || 'Aaliya Rahman'}</p>
-          <p><span>Bank:</span> {settings?.bankName || 'Royal Pearl Bank'}</p>
-          <p><span>A/C No:</span> {settings?.bankACNo || '1234 5678 9012'}</p>
-          <p><span>UPI:</span> {settings?.upiId || 'aaliya@royal'}</p>
+          <p><span>Account:</span> {settings?.bankAccount || 'Hiba M'}</p>
+          <p><span>Bank:</span> {settings?.bankName || ''}</p>
+          <p><span>A/C No:</span> {settings?.bankACNo || ''}</p>
+          <p><span>UPI:</span> {settings?.upiId || ''}</p>
         </div>
       </motion.div>
     </section>

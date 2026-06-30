@@ -1,0 +1,17 @@
+{
+  "short_name": "Wedding",
+  "name": "Wedding Invitation - Hiba & Rishan",
+  "icons": [
+    {
+      "src": "/images/brdandgrm.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1e3719",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1e3719"
+}

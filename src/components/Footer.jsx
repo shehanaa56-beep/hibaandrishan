@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
 export default function Footer({ settings }) {
-  const date = new Date(settings?.weddingDate || '2026-12-12');
+  const date = new Date(settings?.weddingDate || '2026-07-11T00:00:00');
   const d = String(date.getDate()).padStart(2, '0');
   const m = String(date.getMonth() + 1).padStart(2, '0');
   const y = date.getFullYear();
@@ -14,7 +14,7 @@ export default function Footer({ settings }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <p className={styles.names}>{settings?.brideName || 'Aaliya'} &amp; {settings?.groomName || 'Ibrahim'}</p>
+      <p className={styles.names}>{settings?.brideName || 'Hiba M'} &amp; {settings?.groomName || 'Rishan M'}</p>
       <p className={styles.date}>{d} · {m} · {y}</p>
       <p className={styles.made}>Designed with elegance ✧</p>
     </motion.footer>

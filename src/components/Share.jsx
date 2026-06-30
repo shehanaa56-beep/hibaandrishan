@@ -5,8 +5,8 @@ import styles from './Share.module.css';
 export default function Share({ settings }) {
   const [copied, setCopied] = useState(false);
   const url = window.location.href;
-  const bride = settings?.brideName || 'Aaliya';
-  const groom = settings?.groomName || 'Ibrahim';
+  const bride = settings?.brideName || 'Hiba M';
+  const groom = settings?.groomName || 'Rishan M';
   const msg = `You're invited to ${bride} & ${groom}'s wedding! ${url}`;
 
   const copyLink = () => {

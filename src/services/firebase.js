@@ -123,14 +123,19 @@ export async function getSettings() {
   }
 
   // Migrate any old venue/name/event data to the correct Hiba & Rishan details
-  const oldNames = ["Aaliya", "Ibrahim", "Diksha", "Rahul", "Hiba", "Rishan"];
+  const hasOldNames = 
+    settings.brideName?.includes("Aaliya") || 
+    settings.groomName?.includes("Ibrahim") ||
+    settings.brideName?.includes("Diksha") ||
+    settings.groomName?.includes("Rahul");
+  const hasOldDate = settings.weddingDate?.includes("2026-12-12") || settings.weddingDate?.includes("12-12");
   const oldVenues = ["Emmu Auditorium", "Grand Pearl Banquet", "The Royal Pearl Palace"];
   const hasOldEvent = settings.events?.some(
     e => e.name === "Nikah" || e.time === "Saturday" || e.id === "nikah"
   );
   if (
-    oldNames.includes(settings.brideName) ||
-    oldNames.includes(settings.groomName) ||
+    hasOldNames ||
+    hasOldDate ||
     oldVenues.some(v => settings.venue?.includes(v)) ||
     hasOldEvent
   ) {
