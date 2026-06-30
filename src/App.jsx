@@ -6,7 +6,7 @@ import Envelope from './components/Envelope';
 import Curtains from './components/Curtains';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
-import Gallery from './components/Gallery';
+
 import Events from './components/Events';
 import Venue from './components/Venue';
 import Family from './components/Family';
@@ -15,7 +15,7 @@ import Share from './components/Share';
 import Footer from './components/Footer';
 import MusicPlayer from './components/MusicPlayer';
 import Admin from './components/Admin';
-import Moving from './components/Moving';
+
 import Wishes from './components/Wishes';
 import { getSettings } from './services/firebase';
 
@@ -58,11 +58,11 @@ function InvitationPage() {
             <Hero settings={settings} guestName={guestName} />
             <Countdown settings={settings} />
             <Family settings={settings} />
-            <Moving />
+
             <Events settings={settings} />
             <Venue settings={settings} />
             <Share settings={settings} />
-            <Gallery />
+
             <Wishes />
             <RSVP />
             <Footer settings={settings} />

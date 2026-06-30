@@ -1,5 +1,5 @@
 .section {
-  padding: 60px 20px;
+  padding: 60px 20px 0;
   background-color: var(--bg-soft-ivory);
   text-align: center;
   position: relative;
