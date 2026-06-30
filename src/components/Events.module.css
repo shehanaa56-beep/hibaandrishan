@@ -153,3 +153,31 @@
   max-width: 280px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
+
+@media (max-width: 480px) {
+  .verseArabic {
+    font-size: 1.15rem;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.8;
+  }
+  .eventLabel {
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+  }
+  .eventName {
+    font-size: 3.4rem;
+  }
+  .eventDate {
+    font-size: 1.05rem;
+    letter-spacing: 4px;
+  }
+  .eventTime {
+    font-size: 1.45rem;
+  }
+  .eventVenue {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    max-width: 320px;
+  }
+}

@@ -46,25 +46,33 @@
 
 @media (max-width: 480px) {
   .archCard {
-    padding: 40px 20px 30px;
+    padding: 45px 20px 35px;
     border-top-left-radius: 140px;
     border-top-right-radius: 140px;
   }
+  .bismillahArabic {
+    font-size: 1.85rem;
+  }
   .bismillahEnglish {
-    margin-bottom: 15px;
+    font-size: 0.75rem;
+    margin-bottom: 20px;
   }
   .intro {
-    margin-bottom: 15px;
-    font-size: 0.75rem;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
   }
   .familyBlock {
-    margin-bottom: 12px;
-  }
-  .joinedWith {
-    margin: 15px 0;
+    margin-bottom: 15px;
   }
   .parents {
-    font-size: 1.15rem !important;
+    font-size: 1.45rem !important;
+  }
+  .andFamily {
+    font-size: 0.7rem;
+  }
+  .joinedWith {
+    margin: 20px 0;
+    font-size: 1.05rem;
   }
 }
 

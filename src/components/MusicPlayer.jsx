@@ -64,16 +64,6 @@ export default function MusicPlayer({ audioRef }) {
             <button className={styles.controlBtn} onClick={toggleMute} title={muted ? 'Unmute' : 'Mute'}>
               {muted ? <FiVolumeX /> : <FiVolume2 />}
             </button>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.05"
-              value={volume}
-              onChange={handleVolume}
-              className={styles.volumeSlider}
-              title="Volume"
-            />
           </motion.div>
         )}
       </AnimatePresence>
