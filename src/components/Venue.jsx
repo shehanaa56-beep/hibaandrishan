@@ -26,13 +26,7 @@ export default function Venue({ settings }) {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <div className={styles.imageWrap}>
-          <img 
-            src={settings?.venueImage || 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=600&auto=format&fit=crop'} 
-            alt="Venue" 
-            className={styles.venueImage} 
-          />
-        </div>
+
 
         <h3 className={styles.venueName}>{venue}</h3>
         <p className={styles.address}>{address}</p>

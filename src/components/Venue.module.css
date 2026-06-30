@@ -55,22 +55,7 @@
   pointer-events: none;
 }
 
-.imageWrap {
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 2px solid var(--primary-blush);
-  position: relative;
-  z-index: 2;
-}
 
-.venueImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .mapWrap {
   width: 100%;
@@ -127,9 +112,6 @@
 }
 
 @media (max-width: 480px) {
-  .imageWrap {
-    display: none;
-  }
   .card {
     padding: 15px;
   }
