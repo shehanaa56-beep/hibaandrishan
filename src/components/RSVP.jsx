@@ -18,7 +18,6 @@ export default function RSVP() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.phone) return;
     setStatus('loading');
     try {
       await submitRSVP(form);
@@ -66,103 +65,38 @@ export default function RSVP() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
+
+        {/* Attend card options */}
         <div className={styles.fieldGroup}>
-          <label htmlFor="rsvp-name" className={styles.label}>Guest Name</label>
-          <input
-            id="rsvp-name"
-            className={styles.input}
-            type="text"
-            placeholder="Enter your full name"
-            value={form.name}
-            onChange={e => update('name', e.target.value)}
-            required
-          />
-        </div>
-
-        <div className={styles.row}>
-          <div className={styles.fieldGroup}>
-            <label htmlFor="rsvp-phone" className={styles.label}>Phone Number</label>
-            <input
-              id="rsvp-phone"
-              className={styles.input}
-              type="tel"
-              placeholder="Phone number"
-              value={form.phone}
-              onChange={e => update('phone', e.target.value)}
-              required
-            />
-          </div>
-
-          <div className={styles.fieldGroup}>
-            <label htmlFor="rsvp-email" className={styles.label}>Email (Optional)</label>
-            <input
-              id="rsvp-email"
-              className={styles.input}
-              type="email"
-              placeholder="Email address"
-              value={form.email}
-              onChange={e => update('email', e.target.value)}
-            />
+          <label className={styles.label}>Will you be with us?</label>
+          <div className={styles.attendCards}>
+            <label className={`${styles.attendCard} ${form.attending === 'Yes, I Will Attend' ? styles.attendCardActive : ''}`}>
+              <input
+                type="radio"
+                name="attending"
+                value="Yes, I Will Attend"
+                checked={form.attending === 'Yes, I Will Attend'}
+                onChange={e => update('attending', e.target.value)}
+                className={styles.radioInput}
+              />
+              <span className={styles.attendRadio} />
+              <span className={styles.attendText}>Yes, I will be there!</span>
+            </label>
+            <label className={`${styles.attendCard} ${form.attending === 'Sorry, I Cannot Attend' ? styles.attendCardActive : ''}`}>
+              <input
+                type="radio"
+                name="attending"
+                value="Sorry, I Cannot Attend"
+                checked={form.attending === 'Sorry, I Cannot Attend'}
+                onChange={e => update('attending', e.target.value)}
+                className={styles.radioInput}
+              />
+              <span className={styles.attendRadio} />
+              <span className={styles.attendText}>No, but there in spirit.</span>
+            </label>
           </div>
         </div>
 
-        <div className={styles.row}>
-          <div className={styles.fieldGroup}>
-            <label htmlFor="rsvp-guests" className={styles.label}>Number of Guests</label>
-            <input
-              id="rsvp-guests"
-              className={styles.input}
-              type="number"
-              min="1"
-              max="20"
-              value={form.guests}
-              onChange={e => update('guests', e.target.value)}
-              required
-            />
-          </div>
-
-          <div className={styles.fieldGroup}>
-            <label className={styles.label}>Will you attend?</label>
-            <div className={styles.radioGroup}>
-              <label className={styles.radioLabel}>
-                <input
-                  type="radio"
-                  name="attending"
-                  value="Yes, I Will Attend"
-                  checked={form.attending === 'Yes, I Will Attend'}
-                  onChange={e => update('attending', e.target.value)}
-                  className={styles.radioInput}
-                />
-                <span className={styles.customRadio}></span>
-                Yes
-              </label>
-              <label className={styles.radioLabel}>
-                <input
-                  type="radio"
-                  name="attending"
-                  value="Sorry, I Cannot Attend"
-                  checked={form.attending === 'Sorry, I Cannot Attend'}
-                  onChange={e => update('attending', e.target.value)}
-                  className={styles.radioInput}
-                />
-                <span className={styles.customRadio}></span>
-                No
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.fieldGroup}>
-          <label htmlFor="rsvp-message" className={styles.label}>Sweet Message</label>
-          <textarea
-            id="rsvp-message"
-            className={styles.textarea}
-            placeholder="Leave a sweet message for the couple..."
-            value={form.message}
-            onChange={e => update('message', e.target.value)}
-            rows={2}
-          />
-        </div>
 
         {status === 'success' && <p className={styles.success}>Thank you! We have received your response.</p>}
         {status === 'error' && <p className={styles.error}>Something went wrong. Please try again.</p>}
@@ -175,7 +109,7 @@ export default function RSVP() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          {status === 'loading' ? 'SENDING...' : 'SEND RSVP'}
+          {status === 'loading' ? 'SENDING...' : 'SEND RESPONSE'}
         </motion.button>
       </motion.form>
     </section>

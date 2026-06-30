@@ -181,6 +181,71 @@
   transform: scale(1);
 }
 
+/* Card-style attend options */
+.attendCards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.attendCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(167, 181, 158, 0.45);
+  border-radius: 10px;
+  background: rgba(253, 252, 240, 0.85);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.attendCard:hover {
+  border-color: var(--green-forest);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.attendCardActive {
+  border-color: var(--green-forest);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(91, 116, 75, 0.12);
+}
+
+.attendRadio {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(167, 181, 158, 0.7);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.attendCardActive .attendRadio {
+  border-color: var(--green-forest);
+}
+
+.attendCardActive .attendRadio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-forest);
+  position: absolute;
+}
+
+.attendText {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark-taupe);
+}
+
 .submitBtn {
   margin: 10px auto 0;
   width: auto;

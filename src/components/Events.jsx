@@ -29,15 +29,24 @@ export default function Events({ settings }) {
   const events = settings?.events?.length ? settings.events : defaultEvents;
   return (
     <section className={styles.section} id="events">
-      <motion.p className="section-subtitle" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-        Save the Dates
-      </motion.p>
-      <motion.h2 className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-        Wedding Events
-      </motion.h2>
-      
-      <div className="gold-separator"><span className="gold-separator-icon">♦</span></div>
-      
+      {/* Quranic verse header */}
+      <motion.div
+        className={styles.verseBlock}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9 }}
+      >
+        <p className={styles.verseArabic}>
+          وَمِنْ آيَتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        </p>
+        <p className={styles.verseArabic}>
+          وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+        </p>
+      </motion.div>
+
+      <div className={styles.verseSeparator} />
+
       <div className={styles.list}>
         {events.map((ev, i) => <EventCard key={ev.id || i} event={ev} index={i} />)}
       </div>
