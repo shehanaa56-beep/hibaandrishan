@@ -114,11 +114,11 @@
 
 .bismillah {
   position: absolute;
-  top: 22%;
+  top: 14%;
   text-align: center;
   color: var(--green-forest);
   z-index: 2;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.85);
 }
 
 .bismillahArabic {

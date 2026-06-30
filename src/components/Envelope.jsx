@@ -21,7 +21,7 @@ export default function Envelope({ onOpen }) {
 
   useEffect(() => {
     // You can replace this with a royal orchestral track
-    audioRef.current = new Audio('https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=piano-moment-9835.mp3'); 
+    audioRef.current = new Audio('/music/background.mp3'); 
     audioRef.current.loop = true;
     audioRef.current.volume = 0;
   }, []);
