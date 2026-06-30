@@ -39,7 +39,7 @@ const DEFAULT_SETTINGS = {
   venueAddress: "perimpadari, Bhimanad",
   venueMapsUrl: "https://maps.app.goo.gl/KQUEaMpjeG533nd89?g_st=iw",
   events: [
-    { id: "nikah", name: "Nikah", icon: "heart", date: "July 11, 2026", time: "Saturday", venue: "Msp Auditorium" },
+    { id: "wedding", name: "Wedding", icon: "heart", date: "July 11, 2026", time: "11:30 AM – 3:00 PM", venue: "Msp Auditorium" },
   ],
   bankAccount: "Hiba M",
   bankName: "",
@@ -122,16 +122,20 @@ export async function getSettings() {
     if (stored) settings = { ...DEFAULT_SETTINGS, ...JSON.parse(stored) };
   }
 
-  // Migrate any old venue/name data to the new Hiba & Rishan details
+  // Migrate any old venue/name/event data to the correct Hiba & Rishan details
   const oldNames = ["Aaliya", "Ibrahim", "Diksha", "Rahul", "Hiba", "Rishan"];
   const oldVenues = ["Emmu Auditorium", "Grand Pearl Banquet", "The Royal Pearl Palace"];
+  const hasOldEvent = settings.events?.some(
+    e => e.name === "Nikah" || e.time === "Saturday" || e.id === "nikah"
+  );
   if (
     oldNames.includes(settings.brideName) ||
     oldNames.includes(settings.groomName) ||
-    oldVenues.some(v => settings.venue?.includes(v))
+    oldVenues.some(v => settings.venue?.includes(v)) ||
+    hasOldEvent
   ) {
     settings = { ...settings, ...DEFAULT_SETTINGS };
-    // Write corrected names back to Firestore permanently
+    // Write corrected data back to Firestore & localStorage permanently
     try {
       await setDoc(doc(db, "config", "settings"), settings, { merge: true });
     } catch (e) {

@@ -1,38 +1,26 @@
 import { motion } from 'framer-motion';
-import { BsStars } from 'react-icons/bs';
 import styles from './Events.module.css';
 
 const defaultEvents = [
-  { id: 'nikah', name: 'Nikah', date: 'July 11, 2026', time: 'Saturday', venue: 'Msp Auditorium, perimpadari, Bhimanad' },
+  { id: 'wedding', name: 'Wedding', date: 'July 11, 2026', time: '11:30 PM – 3:00 PM', venue: 'Msp Auditorium, perimpadari, Bhimanad' },
 ];
 
 const EventCard = ({ event, index }) => {
   return (
     <motion.div
-      className={styles.card}
+      className={styles.eventBlock}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -4, boxShadow: '0 15px 30px rgba(212, 175, 55, 0.15)' }}
+      transition={{ duration: 0.8, delay: index * 0.15 }}
     >
-      <div className={styles.header}>
-        <div className={styles.iconWrap}><BsStars className={styles.icon} /></div>
-        <div>
-          <h3 className={styles.name}>{event.name}</h3>
-          <span className={styles.date}>{event.date}</span>
-        </div>
-      </div>
-      <div className={styles.details}>
-        <div className={styles.detail}>
-          <span className={styles.detailLabel}>TIME</span>
-          <span className={styles.detailVal}>{event.time}</span>
-        </div>
-        <div className={styles.detail}>
-          <span className={styles.detailLabel}>VENUE</span>
-          <span className={styles.detailVal}>{event.venue}</span>
-        </div>
-      </div>
+      <p className={styles.eventLabel}>✦ Event ✦</p>
+      <h3 className={styles.eventName}>{event.name}</h3>
+      <div className={styles.dividerLine} />
+      <p className={styles.eventDate}>{event.date}</p>
+      <p className={styles.eventTime}>{event.time}</p>
+      <div className={styles.dividerDots}>· · ·</div>
+      <p className={styles.eventVenue}>{event.venue}</p>
     </motion.div>
   );
 };
