@@ -1,0 +1,261 @@
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #FDF6F0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px 20px 20px 20px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+/* Sage green cherry blossom background */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/sage_floral_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  flex-grow: 1;
+  text-align: center;
+  z-index: 10;
+  padding-bottom: 160px;
+  box-sizing: border-box;
+}
+
+/* Guest Personalized Invitation Card Overlay */
+.guestGreeting {
+  background: rgba(253, 246, 240, 0.92);
+  border: 1px solid rgba(243, 186, 186, 0.4);
+  padding: 8px 18px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-dark-taupe);
+  box-shadow: 0 4px 10px rgba(91, 116, 75, 0.06);
+}
+
+.guestGreeting p {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.guestName {
+  font-family: var(--font-serif-primary);
+  font-weight: 700;
+  color: var(--green-deep);
+  font-size: 0.85rem;
+}
+
+.guestSubtitle {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Save the Date script header */
+.saveTheDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 45px;
+  position: relative;
+}
+
+.wordSave {
+  font-family: var(--font-serif-primary);
+  font-size: 1.25rem;
+  letter-spacing: 8px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-left: 8px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(53, 82, 43, 0.5);
+}
+
+.wordDate {
+  font-family: var(--font-serif-primary);
+  font-size: 0.85rem;
+  letter-spacing: 5px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-left: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(53, 82, 43, 0.5);
+}
+
+.wordThe {
+  font-family: var(--font-cursive);
+  font-size: 3.2rem;
+  color: #F9DDB8;
+  margin: -16px 0 -12px 0;
+  z-index: 2;
+  transform: rotate(-6deg);
+  display: inline-block;
+  line-height: 1;
+  text-shadow: 1px 1px 4px rgba(53, 82, 43, 0.4);
+}
+
+.label {
+  font-family: var(--font-serif-primary);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--green-deep);
+  margin: 5px 0 10px 0;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Names rendering block */
+.names {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 5px 0 12px 0;
+  text-shadow: 0 1px 8px rgba(53, 82, 43, 0.5);
+}
+
+/* Date bar block */
+.date {
+  font-family: var(--font-serif-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #F9DDB8;
+  letter-spacing: 2.5px;
+  margin: 8px 0;
+  border-top: 1px solid rgba(249, 221, 184, 0.5);
+  border-bottom: 1px solid rgba(249, 221, 184, 0.5);
+  padding: 4px 22px;
+  display: inline-block;
+  text-shadow: 0 1px 4px rgba(53, 82, 43, 0.3);
+}
+
+/* Venue block */
+.venue {
+  font-family: var(--font-serif-primary);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  color: #fff;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 300px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(53, 82, 43, 0.4);
+}
+
+/* Tuxedo and Wedding Dress illustration wrapper */
+.illustrationWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 380px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 4;
+  pointer-events: none;
+  margin: 0;
+}
+
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Mobile responsive constraints */
+@media (max-width: 480px) {
+  .hero {
+    padding: 35px 15px 15px 15px;
+  }
+
+  .content {
+    margin-top: 10px;
+  }
+
+  .guestGreeting {
+    margin-bottom: 12px;
+    padding: 6px 14px;
+  }
+
+  .saveTheDate {
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .wordSave {
+    font-size: 1.05rem;
+    letter-spacing: 6px;
+    margin-left: 6px;
+  }
+
+  .wordDate {
+    font-size: 0.72rem;
+    letter-spacing: 4px;
+    margin-left: 4px;
+  }
+
+  .wordThe {
+    font-size: 2.5rem;
+    margin: -14px 0 -10px 0;
+  }
+
+  .names {
+    font-size: 1.45rem;
+    margin: 4px 0 8px 0;
+  }
+
+  .date {
+    font-size: 0.85rem;
+    padding: 3px 16px;
+    margin: 6px 0;
+  }
+
+  .venue {
+    font-size: 0.62rem;
+    max-width: 260px;
+  }
+
+  .illustrationWrapper {
+    height: 260px;
+    max-width: 310px;
+    bottom: 0;
+  }
+
+  .illustration {
+    width: 100%;
+    height: 100%;
+  }
+}
