@@ -35,8 +35,8 @@ export default function Hero({ settings, guestName }) {
   const address = settings?.venueAddress || 'perimpadari, Bhimanad';
   const town = 'BHIMANAD';
 
-  const bride = (settings?.brideName || 'Hiba').toUpperCase();
-  const groom = (settings?.groomName || 'Rishan').toUpperCase();
+  const bride = settings?.brideName || 'Hiba';
+  const groom = settings?.groomName || 'Rishan';
 
   return (
     <section className={styles.hero} id="hero">
@@ -70,7 +70,7 @@ export default function Hero({ settings, guestName }) {
 
         {/* Bride & Groom names */}
         <motion.h1 
-          className={styles.names}
+          className={styles.namesScript}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -80,17 +80,7 @@ export default function Hero({ settings, guestName }) {
         </motion.h1>
       </div>
 
-      {/* Tuxedo and Dress center bottom illustration */}
-      <div className={styles.illustrationWrapper}>
-        <motion.img 
-          src="/images/dress_tuxedo.png" 
-          alt="Wedding Tuxedo and Gown" 
-          className={styles.illustration}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        />
-      </div>
+
     </section>
   );
 }

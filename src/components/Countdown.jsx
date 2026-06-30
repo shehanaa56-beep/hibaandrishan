@@ -54,6 +54,21 @@ export default function Countdown({ settings }) {
         <Card value={time.minutes} label="MINUTES" index={2} />
         <Card value={time.seconds} label="SECONDS" index={3} />
       </div>
+
+      {/* Bride & Groom photo */}
+      <motion.div
+        className={styles.coupleImgWrapper}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <img
+          src="/images/brdandgrm.jpeg"
+          alt="Hiba & Rishan"
+          className={styles.coupleImg}
+        />
+      </motion.div>
     </section>
   );
 }

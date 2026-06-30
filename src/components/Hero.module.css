@@ -37,7 +37,7 @@
   flex-grow: 1;
   text-align: center;
   z-index: 10;
-  padding-bottom: 160px;
+  padding-bottom: 0;
   box-sizing: border-box;
 }
 
@@ -80,8 +80,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
-  margin-top: 45px;
+  margin-bottom: 10px;
+  margin-top: 0;
   position: relative;
 }
 
@@ -131,7 +131,7 @@
   opacity: 0.85;
 }
 
-/* Names rendering block */
+/* Names rendering block - original all-caps version */
 .names {
   font-family: var(--font-serif-secondary);
   font-size: 1.8rem;
@@ -140,6 +140,19 @@
   letter-spacing: 1px;
   margin: 5px 0 12px 0;
   text-shadow: 0 1px 8px rgba(53, 82, 43, 0.5);
+}
+
+/* Beautiful script names */
+.namesScript {
+  font-family: var(--font-cursive);
+  font-size: 4.2rem;
+  font-weight: 400;
+  color: #F9DDB8;
+  letter-spacing: 1px;
+  margin: 0px 0 0px 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(53, 82, 43, 0.5), 0 0 30px rgba(249, 221, 184, 0.35);
+  display: block;
 }
 
 /* Date bar block */
@@ -211,8 +224,8 @@
   }
 
   .saveTheDate {
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 8px;
   }
 
   .wordSave {
@@ -235,6 +248,10 @@
   .names {
     font-size: 1.45rem;
     margin: 4px 0 8px 0;
+  }
+
+  .namesScript {
+    font-size: 3.2rem;
   }
 
   .date {

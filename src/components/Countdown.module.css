@@ -83,3 +83,20 @@
     font-size: 0.6rem;
   }
 }
+
+/* Bride & Groom photo below countdown */
+.coupleImgWrapper {
+  width: 100%;
+  margin-top: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(91, 116, 75, 0.12);
+  border: 1px solid rgba(243, 186, 186, 0.35);
+}
+
+.coupleImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

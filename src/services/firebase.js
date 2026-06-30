@@ -123,7 +123,7 @@ export async function getSettings() {
   }
 
   // Migrate any old venue/name data to the new Hiba & Rishan details
-  const oldNames = ["Aaliya", "Ibrahim"];
+  const oldNames = ["Aaliya", "Ibrahim", "Diksha", "Rahul", "Hiba", "Rishan"];
   const oldVenues = ["Emmu Auditorium", "Grand Pearl Banquet", "The Royal Pearl Palace"];
   if (
     oldNames.includes(settings.brideName) ||
@@ -131,6 +131,12 @@ export async function getSettings() {
     oldVenues.some(v => settings.venue?.includes(v))
   ) {
     settings = { ...settings, ...DEFAULT_SETTINGS };
+    // Write corrected names back to Firestore permanently
+    try {
+      await setDoc(doc(db, "config", "settings"), settings, { merge: true });
+    } catch (e) {
+      console.warn("Failed to migrate settings to Firestore", e);
+    }
     try {
       localStorage.setItem("weddingSettings", JSON.stringify(settings));
     } catch (e) {
